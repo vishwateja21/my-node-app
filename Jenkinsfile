@@ -14,20 +14,20 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 // Install Node.js dependencies
-                sh 'npm install'
+                bat 'npm install'
             }
         }
         stage('Build with Maven') {
             steps {
                 // Build the application using Maven
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
         stage('Run Selenium Tests') {
             steps {
                 // Run Selenium tests (this assumes you have a script for running your tests)
                 // You may need to adjust this command based on your test
-                sh 'mvn test -Dtest=YourSeleniumTestClass'
+                bat 'mvn test -Dtest=YourSeleniumTestClass'
             }
         }
     }
